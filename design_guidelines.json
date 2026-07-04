@@ -1,0 +1,220 @@
+{
+  "theme": "light",
+  "archetype": "Archetype 1 (Organic & Earthy) blended with Archetype 5 (Luxury)",
+  "colors": {
+    "background": {
+      "hex": "#FDFBF7",
+      "hsl": "hsl(40, 43%, 98%)",
+      "name": "Ivory Off-White",
+      "usage": "Primary background for all sections, providing a warm, spacious, gallery-like feel."
+    },
+    "text_primary": {
+      "hex": "#1A1A1A",
+      "hsl": "hsl(0, 0%, 10%)",
+      "name": "Charcoal",
+      "usage": "Headings, primary body text, ensuring high contrast without the harshness of pure black."
+    },
+    "text_secondary": {
+      "hex": "#5C5C5C",
+      "hsl": "hsl(0, 0%, 36%)",
+      "name": "Muted Charcoal",
+      "usage": "Subtitles, meta information, footer text."
+    },
+    "accent_primary": {
+      "hex": "#A68A64",
+      "hsl": "hsl(35, 29%, 52%)",
+      "name": "Muted Bronze / Warm Gold",
+      "usage": "Hover states, active slider handles, delicate UI borders, and small accent typography (overlines)."
+    },
+    "accent_secondary": {
+      "hex": "#E5D9C5",
+      "hsl": "hsl(38, 36%, 84%)",
+      "name": "Natural Beige",
+      "usage": "Soft secondary backgrounds, bento grid block backgrounds, and subtle hover highlights."
+    },
+    "stone_tone": {
+      "hex": "#8C867B",
+      "hsl": "hsl(39, 7%, 52%)",
+      "name": "Stone Tone",
+      "usage": "Borders, inactive states, timeline vertical lines."
+    }
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Cormorant Garamond",
+      "weights": [400, 500, 600],
+      "tailwind_class": "font-serif",
+      "styles": "tracking-tight leading-[1.1] font-light",
+      "usage": "H1, H2, H3, large quotes. Never use bold; rely on scale and light weights for elegance."
+    },
+    "body": {
+      "font_family": "Outfit",
+      "weights": [300, 400],
+      "tailwind_class": "font-sans",
+      "styles": "tracking-wide leading-relaxed font-light text-base md:text-lg",
+      "usage": "Paragraphs, labels, button text, and descriptions."
+    },
+    "overlines": {
+      "font_family": "Outfit",
+      "styles": "uppercase tracking-[0.2em] text-xs md:text-sm text-accent_primary",
+      "usage": "Section markers (e.g., 'OUR SERVICES', 'EST. 2007')"
+    }
+  },
+  "spacing_scale": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_gap": "py-24 md:py-32 lg:py-48",
+    "element_gap_small": "gap-4 md:gap-6",
+    "element_gap_large": "gap-12 md:gap-24"
+  },
+  "layout_blueprints": [
+    {
+      "section": "Header / Navigation",
+      "layout": "Fixed top, w-full, z-50. Minimalist transparent nav that transforms on scroll (adds backdrop-blur-xl and border-b border-stone_tone/20). Left: Wordmark Logo. Right: Clean text links + 'Start Project' CTA.",
+      "components": ["NavLinks", "ContactButton"]
+    },
+    {
+      "section": "Immersive Hero",
+      "layout": "h-[200vh] relative. Uses a sticky container (h-screen) with overflow-hidden. A wide panorama image acts as the background. As the user scrolls down, the image translates horizontally (e.g., from 0% to -30%) using Framer Motion to simulate panning a camera across the room. Overlay text: Huge 'Cormorant Garamond' headline centered, bottom-anchored scroll indicator.",
+      "components": ["StickyScrollContainer", "PanoramaImage", "HeroTypography"]
+    },
+    {
+      "section": "Introduction",
+      "layout": "Massive typography block. text-4xl md:text-6xl max-w-4xl mx-auto text-center. Staggered word-by-word reveal on scroll using Framer Motion.",
+      "components": ["ScrollRevealText"]
+    },
+    {
+      "section": "Selected Projects",
+      "layout": "Cinematic horizontal scroll. A sticky container with an inner track that moves horizontally. Each project is a large card (w-[80vw] md:w-[60vw]) with high-quality interior images. Minimal text overlay at the bottom corner of each image.",
+      "components": ["HorizontalScrollTrack", "ProjectCard"]
+    },
+    {
+      "section": "Services",
+      "layout": "Editorial vertical list. A group of border-b (border-stone_tone/30) list items. Large text (text-3xl md:text-5xl). On hover, a floating image corresponding to the service appears and follows the cursor (or fades in fixed to the right side if cursor follow is too complex).",
+      "components": ["HoverImageRevealList", "ServiceItem"]
+    },
+    {
+      "section": "Why Suntek",
+      "layout": "Asymmetrical Bento Grid (Tetris Grid). grid-cols-1 md:grid-cols-12 gap-8. Mix of large imagery, large typography statistics (e.g., '15+ Years'), and soft Natural Beige background blocks.",
+      "components": ["BentoGrid", "StatCard", "ImageCard"]
+    },
+    {
+      "section": "How It Works (Process)",
+      "layout": "Vertical timeline. A single vertical line drawn down the left side. As user scrolls, steps (1 to 4) fade in and slide up. Step numbers use the primary accent color.",
+      "components": ["ScrollTimeline", "ProcessStep"]
+    },
+    {
+      "section": "Before / After Slider",
+      "layout": "Interactive juxtaposition component. Two overlapping images with a custom drag handle. Muted bronze handle with arrows. Allows users to slide and see the transformation.",
+      "components": ["BeforeAfterSlider"]
+    },
+    {
+      "section": "Client Stories",
+      "layout": "Editorial layout. A large quote taking up most of the screen. 'Cormorant Garamond' italicized. Next/Prev minimal buttons to cycle through stories.",
+      "components": ["TestimonialCarousel"]
+    },
+    {
+      "section": "Cinematic CTA",
+      "layout": "Full screen (h-screen). Dark overlay on a premium interior image. Large text 'Ready to transform your space?' and a minimalist button.",
+      "components": ["FullscreenImageCTA"]
+    },
+    {
+      "section": "Contact Form",
+      "layout": "Minimalist form. Two-column grid for inputs (Name, Email), full width for message. Inputs are bottom-border only (border-b border-charcoal/30), floating labels. No heavy boxes. Includes basic form validation and a submit button that indicates loading state.",
+      "components": ["ShadcnFormCustomized", "BottomBorderInput"]
+    },
+    {
+      "section": "Footer",
+      "layout": "py-24. Large 'SUNTEK' typographic logo taking full width. Links distributed in 3 columns above it. Very clean, minimal.",
+      "components": ["FooterLinks", "GiantLogo"]
+    }
+  ],
+  "motion_patterns": {
+    "smooth_scroll": "Lenis (if possible) or CSS scroll-behavior: smooth. Framer motion useScroll for linked animations.",
+    "reveal_up": "initial={{ opacity: 0, y: 40 }}, whileInView={{ opacity: 1, y: 0 }}, transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}",
+    "stagger_children": "transition={{ staggerChildren: 0.1 }}",
+    "parallax_image": "scale image slightly and translate Y opposite to scroll direction",
+    "horizontal_scroll": "useTransform on x axis mapped to container scrollYProgress",
+    "hover_button": "arrow icon translates right slightly, border color transitions to Muted Bronze"
+  },
+  "media": {
+    "hero_panorama": {
+      "url": "https://images.unsplash.com/photo-1648881806148-e5c51179c826?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHw0fHx3aWRlJTIwbHV4dXJ5JTIwbGl2aW5nJTIwcm9vbSUyMGludGVyaW9yfGVufDB8fHx8MTc4MzE0ODQzM3ww&ixlib=rb-4.1.0&q=85",
+      "alt": "Wide luxury living room panorama",
+      "usage": "Background for the immersive scroll-controlled hero section."
+    },
+    "projects": [
+      {
+        "url": "https://images.unsplash.com/photo-1711873316332-acb6930211e1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHw0fHxtaW5pbWFsaXN0JTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzgzMTQ4NDMzfDA&ixlib=rb-4.1.0&q=85",
+        "title": "The Serene Hallway",
+        "subtitle": "Minimalist Residential Architecture"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzgzMTQ4NDMzfDA&ixlib=rb-4.1.0&q=85",
+        "title": "Archway Lounge",
+        "subtitle": "Boutique Hospitality"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1724582586458-a51791349977?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwzfHxtaW5pbWFsaXN0JTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzgzMTQ4NDMzfDA&ixlib=rb-4.1.0&q=85",
+        "title": "Urban Retreat",
+        "subtitle": "Luxury Condo"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1724582586495-d050726cf354?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwyfHxtaW5pbWFsaXN0JTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzgzMTQ4NDMzfDA&ixlib=rb-4.1.0&q=85",
+        "title": "Monochrome Minimal",
+        "subtitle": "Modern Estate"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1704040686428-7534b262d0d8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHx3aWRlJTIwbHV4dXJ5JTIwbGl2aW5nJTIwcm9vbSUyMGludGVyaW9yfGVufDB8fHx8MTc4MzE0ODQzM3ww&ixlib=rb-4.1.0&q=85",
+        "title": "Light & Space",
+        "subtitle": "Open Concept Living"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1704040686413-2c607dbd2f06?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHx3aWRlJTIwbHV4dXJ5JTIwbGl2aW5nJTIwcm9vbSUyMGludGVyaW9yfGVufDB8fHx8MTc4MzE0ODQzM3ww&ixlib=rb-4.1.0&q=85",
+        "title": "The Glass House",
+        "subtitle": "Architectural Harmony"
+      }
+    ],
+    "services_visuals": [
+      {
+        "service": "Spatial Planning",
+        "url": "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzgzMTQ4NDMzfDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "service": "Full Renovation",
+        "url": "https://images.unsplash.com/photo-1711873316332-acb6930211e1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHw0fHxtaW5pbWFsaXN0JTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzgzMTQ4NDMzfDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "service": "Interior Styling",
+        "url": "https://images.unsplash.com/photo-1724582586529-62622e50c0b3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHx3aWRlJTIwbHV4dXJ5JTIwbGl2aW5nJTIwcm9vbSUyMGludGVyaW9yfGVufDB8fHx8MTc4MzE0ODQzM3ww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "service": "Custom Carpentry",
+        "url": "https://images.unsplash.com/photo-1724582586458-a51791349977?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwzfHxtaW5pbWFsaXN0JTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzgzMTQ4NDMzfDA&ixlib=rb-4.1.0&q=85"
+      }
+    ],
+    "before_after": {
+      "before": {
+        "url": "https://images.unsplash.com/photo-1634586648651-f1fb9ec10d90?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwyfHx1bmZpbmlzaGVkJTIwcm9vbSUyMHJlbm92YXRpb258ZW58MHx8fHwxNzgzMTQ4NDMzfDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Unfinished room structure"
+      },
+      "after": {
+        "url": "https://images.unsplash.com/photo-1704040686428-7534b262d0d8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHx3aWRlJTIwbHV4dXJ5JTIwbGl2aW5nJTIwcm9vbSUyMGludGVyaW9yfGVufDB8fHx8MTc4MzE0ODQzM3ww&ixlib=rb-4.1.0&q=85",
+        "alt": "Finished modern living space"
+      }
+    },
+    "cta_background": {
+      "url": "https://images.unsplash.com/photo-1724582586529-62622e50c0b3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHx3aWRlJTIwbHV4dXJ5JTIwbGl2aW5nJTIwcm9vbSUyMGludGVyaW9yfGVufDB8fHx8MTc4MzE0ODQzM3ww&ixlib=rb-4.1.0&q=85",
+      "alt": "Cinematic CTA luxury room"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Do not use generic SaaS layouts. Build this purely as a high-end editorial marketing site.",
+    "Install and use lucide-react for all standard icons, unless explicitly asked for other libraries.",
+    "Use Framer Motion to create a horizontal scroll effect for the 'Immersive Hero' panorama and 'Selected Projects' sections. The hero should scroll the background image horizontally on vertical scroll to simulate a 360-degree camera pan.",
+    "For typography, explicitly set Google Fonts via next/font (if Next.js) or standard import for 'Cormorant Garamond' (serif) and 'Outfit' (sans-serif). Do not use Inter.",
+    "All interactive and key informational elements MUST include a data-testid attribute in kebab-case based on their role.",
+    "All JS code must be pure .jsx / .js - do NOT generate .tsx or TS types.",
+    "Avoid typical card borders/shadows. Rely on massive spacing, negative space, and large typography to define layout.",
+    "Use standard HTML inputs with Tailwind for the contact form to achieve the 'bottom border only' look, or deeply customize shadcn's Input component to strip out default rings and borders."
+  ]
+}

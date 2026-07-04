@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@200;300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,8 +10,8 @@ html {
 
 body {
   margin: 0;
-  background-color: #FDFBF7;
-  color: #1A1A1A;
+  background-color: #F1EFE9;
+  color: #171714;
   font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -20,30 +20,30 @@ body {
 }
 
 ::selection {
-  background: #1A1A1A;
-  color: #FDFBF7;
+  background: #171714;
+  color: #F1EFE9;
 }
 
 @layer base {
   :root {
-    --background: 40 43% 98%;
-    --foreground: 0 0% 10%;
-    --card: 40 43% 98%;
-    --card-foreground: 0 0% 10%;
-    --popover: 40 43% 98%;
-    --popover-foreground: 0 0% 10%;
-    --primary: 0 0% 10%;
-    --primary-foreground: 40 43% 98%;
-    --secondary: 38 36% 92%;
-    --secondary-foreground: 0 0% 10%;
-    --muted: 38 36% 92%;
-    --muted-foreground: 0 0% 36%;
+    --background: 40 21% 93%;
+    --foreground: 45 6% 9%;
+    --card: 40 21% 93%;
+    --card-foreground: 45 6% 9%;
+    --popover: 40 21% 93%;
+    --popover-foreground: 45 6% 9%;
+    --primary: 45 6% 9%;
+    --primary-foreground: 40 21% 93%;
+    --secondary: 39 15% 87%;
+    --secondary-foreground: 45 6% 9%;
+    --muted: 39 15% 87%;
+    --muted-foreground: 39 7% 44%;
     --accent: 35 29% 52%;
-    --accent-foreground: 40 43% 98%;
+    --accent-foreground: 40 21% 93%;
     --destructive: 0 60% 45%;
-    --destructive-foreground: 40 43% 98%;
-    --border: 39 20% 84%;
-    --input: 39 20% 84%;
+    --destructive-foreground: 40 21% 93%;
+    --border: 39 15% 78%;
+    --input: 39 15% 78%;
     --ring: 35 29% 52%;
     --radius: 0.25rem;
   }
@@ -77,17 +77,24 @@ body {
   transform-origin: left;
 }
 
+.font-display {
+  font-family: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+}
+
 /* Bottom border only input */
 .field-underline {
   background: transparent;
   border: 0;
-  border-bottom: 1px solid rgba(26, 26, 26, 0.25);
+  border-bottom: 1px solid rgba(23, 23, 20, 0.25);
   border-radius: 0;
   padding: 14px 0 10px 0;
   font-size: 15px;
   font-weight: 300;
   letter-spacing: 0.02em;
-  color: #1A1A1A;
+  color: #171714;
   width: 100%;
   outline: none;
   transition: border-color 0.4s ease;
@@ -96,17 +103,17 @@ body {
   border-bottom-color: #A68A64;
 }
 .field-underline::placeholder {
-  color: rgba(26, 26, 26, 0.35);
+  color: rgba(23, 23, 20, 0.35);
   font-weight: 300;
 }
 
 .field-select {
   background: transparent;
   border: 0;
-  border-bottom: 1px solid rgba(26, 26, 26, 0.25);
+  border-bottom: 1px solid rgba(23, 23, 20, 0.25);
   border-radius: 0;
   padding: 14px 0 10px 0;
-  color: #1A1A1A;
+  color: #171714;
   width: 100%;
   outline: none;
   font-family: 'Outfit', sans-serif;
@@ -124,7 +131,7 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.06;
+  opacity: 0.09;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
@@ -133,14 +140,16 @@ body {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+/* Doorway arch mask — used at end of hero */
+.doorway-arch {
+  background: #060605;
+  border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+  transform-origin: center bottom;
 }
 
-.animate-marquee {
-  animation: marquee 40s linear infinite;
-}
+/* Ghost image loading */
+.hero-scene { will-change: transform, opacity, filter; }
+.hero-parallax { will-change: transform; }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }

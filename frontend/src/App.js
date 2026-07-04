@@ -1,6 +1,7 @@
 import "@/index.css";
 import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
+import ImmersiveHero from "@/components/ImmersiveHero";
+import HeroTransition from "@/components/HeroTransition";
 import Introduction from "@/components/Introduction";
 import SelectedProjects from "@/components/SelectedProjects";
 import Services from "@/components/Services";
@@ -21,7 +22,8 @@ function App() {
     <div className="App bg-ivory text-charcoal min-h-screen">
       <Navigation />
       <main>
-        <Hero />
+        <ImmersiveHero />
+        <HeroTransition />
         <Introduction />
         <SelectedProjects />
         <Services />
@@ -38,8 +40,8 @@ function App() {
         position="bottom-center"
         toastOptions={{
           style: {
-            background: "#1A1A1A",
-            color: "#FDFBF7",
+            background: "#171714",
+            color: "#F1EFE9",
             border: "1px solid #A68A64",
             borderRadius: 0,
             fontFamily: "Outfit, sans-serif",

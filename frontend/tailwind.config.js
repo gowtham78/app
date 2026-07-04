@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         serif: ['"Cormorant Garamond"', "Georgia", "serif"],
+        display: ['Fraunces', '"Cormorant Garamond"', "Georgia", "serif"],
         sans: ['Outfit', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
@@ -16,11 +17,11 @@ module.exports = {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        ivory: "#FDFBF7",
-        charcoal: "#1A1A1A",
+        ivory: "#F1EFE9",
+        charcoal: "#171714",
         bronze: "#A68A64",
         beige: "#E5D9C5",
-        stone: "#8C867B",
+        stone: "#B8B1A5",
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",

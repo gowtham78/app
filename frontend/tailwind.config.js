@@ -17,11 +17,14 @@ module.exports = {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        ivory: "#F1EFE9",
-        charcoal: "#171714",
-        bronze: "#A68A64",
+        ivory: "#F3F0E8",
+        charcoal: "#11110F",
+        deepdark: "#171713",
+        bronze: "#806B45",
+        gold: "#B89A5B",
+        goldlight: "#D2B879",
         beige: "#E5D9C5",
-        stone: "#B8B1A5",
+        stone: "#D8D0C2",
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",

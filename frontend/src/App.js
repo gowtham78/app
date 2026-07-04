@@ -1,5 +1,6 @@
 import "@/index.css";
 import Navigation from "@/components/Navigation";
+import GoldenCursor from "@/components/GoldenCursor";
 import ImmersiveHero from "@/components/ImmersiveHero";
 import HeroTransition from "@/components/HeroTransition";
 import Introduction from "@/components/Introduction";
@@ -20,12 +21,13 @@ function App() {
   useLenis();
   return (
     <div className="App bg-ivory text-charcoal min-h-screen">
+      <GoldenCursor />
       <Navigation />
       <main>
         <ImmersiveHero />
         <HeroTransition />
-        <Introduction />
         <SelectedProjects />
+        <Introduction />
         <Services />
         <WhySuntek />
         <Process />
@@ -40,9 +42,9 @@ function App() {
         position="bottom-center"
         toastOptions={{
           style: {
-            background: "#171714",
-            color: "#F1EFE9",
-            border: "1px solid #A68A64",
+            background: "#11110F",
+            color: "#F3F0E8",
+            border: "1px solid #B89A5B",
             borderRadius: 0,
             fontFamily: "Outfit, sans-serif",
           },

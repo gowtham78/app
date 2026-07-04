@@ -63,15 +63,20 @@ export default function Navigation() {
           href="#top"
           data-testid="nav-logo"
           data-cursor="expand"
-          className={`flex items-baseline gap-3 ${logoColor}`}
+          className="flex items-center gap-3"
           aria-label="Suntek Designs — Home"
         >
-          <span className="font-display leading-none" style={{ fontSize: "clamp(24px, 2vw, 34px)", letterSpacing: "-0.01em", fontWeight: 400 }}>
-            Suntek
-          </span>
-          <span className={`text-[9px] tracking-[0.45em] uppercase font-sans ${cinemaMode ? "text-[#B89A5B]" : "text-bronze"} hidden sm:inline`} style={{ letterSpacing: "0.4em" }}>
-            Designs
-          </span>
+          <img
+            src="/brand/suntek-logo.png"
+            alt="Suntek Designs"
+            className={`h-9 md:h-11 w-auto transition-all duration-500 ${cinemaMode ? "opacity-100" : "opacity-95"}`}
+            style={{
+              filter: cinemaMode
+                ? "drop-shadow(0 2px 12px rgba(184,154,91,0.35))"
+                : "drop-shadow(0 1px 6px rgba(17,17,15,0.12))",
+            }}
+            draggable={false}
+          />
         </a>
 
         <div className={`flex items-baseline gap-6 md:gap-10 ${menuColor}`}>

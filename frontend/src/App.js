@@ -2,7 +2,7 @@ import "@/index.css";
 import Navigation from "@/components/Navigation";
 import GoldenCursor from "@/components/GoldenCursor";
 import ImmersiveHero from "@/components/ImmersiveHero";
-import HeroTransition from "@/components/HeroTransition";
+import DoorTransition from "@/components/DoorTransition";
 import Introduction from "@/components/Introduction";
 import SelectedProjects from "@/components/SelectedProjects";
 import Services from "@/components/Services";
@@ -25,7 +25,7 @@ function App() {
       <Navigation />
       <main>
         <ImmersiveHero />
-        <HeroTransition />
+        <DoorTransition />
         <SelectedProjects />
         <Introduction />
         <Services />
